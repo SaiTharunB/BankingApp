@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg">
+    
+    <div class="container" *ngIf="flag">
+        
+        <form class="form-group"  [formGroup]="myform">
+            <div class="design" id="cc">
+            
+            <div class="form-group ">
+                <label for="pwd" >Customer Id:</label>
+                 <input type="text" formControlName="cid" class="form-control " [(ngModel)]="cid" name="cid"  >
+                 <span class="error" *ngIf="myform.controls.cid.touched && myform.controls.cid.invalid && myform.controls.cid.errors?.required">Customer id is required<br></span>
+         <span class="error" *ngIf="myform.controls.cid.touched && myform.controls.cid.invalid && myform.controls.cid.errors?.minlength">Minimum of three characters required</span>
+            </div>
+    
+            <div class="form-group ">
+                <label for="pwd" >Current Balance:</label>
+                 <input type="number" formControlName="currBalance" class="form-control "[(ngModel)]="currBalance" name="pass"  >
+                 <span class="error" *ngIf="myform.controls.currBalance.touched && myform.controls.currBalance.invalid && myform.controls.currBalance.errors?.required">Balance is required<br></span>
+         <span class="error" *ngIf="myform.controls.currBalance.touched && myform.controls.currBalance.invalid && myform.controls.currBalance.errors?.min">Minimum balance should be 2000</span>
+            </div>
+               <div class="form-group">
+                <label for="acType" >Account type:</label>
+                <select name="acType" class="form-control" formControlName="acType" >
+                    
+                    <option value="Savings"   selected="selected">Savings</option>
+                    <option value="Current">Current</option>
+                    
+                  </select>
+               </div>    
+           
+            <div class="form-group ">
+                <label for="acType" >Username:</label>
+                 <input type="text" formControlName="oName" class="form-control " [(ngModel)]="oName" name="oName"  >
+                 <span class="error" *ngIf="myform.controls.oName.touched && myform.controls.oName.invalid && myform.controls.oName.errors?.required">Owner name is required<br></span>
+         <span class="error" *ngIf="myform.controls.oName.touched && myform.controls.oName.invalid && myform.controls.oName.errors?.minlength">Minimum of six characters required</span>
+            </div>
+            
+            <div class="form-group ">
+                <input type="button" class="btn btn-info btn-lg" id="btn" value="Create" [disabled]="!myform.valid" (click)="createAccount()">
+                
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="!flag" class="center">
+    <h1 class="text-danger">UnAuthorized Access</h1>
+</div>
+</body>
+</html>

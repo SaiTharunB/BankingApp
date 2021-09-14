@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div  *ngIf="flag" class="container">
+       
+         <form class="form-group"  [formGroup]="myform">
+            <div class="design" id="cc">
+                    <div class="form-group ">
+                        <label for="Name" class="col-form-label">Source Account Number:</label>
+                        <input type="text" formControlName="srcaccid" class="form-control " name="uname" >
+                        <span class="error" *ngIf="myform.controls.srcaccid.touched && myform.controls.srcaccid.invalid && myform.controls.srcaccid.errors?.required">srcaccid is required<br></span>
+                <span class="error" *ngIf="myform.controls.srcaccid.touched && myform.controls.srcaccid.invalid && myform.controls.srcaccid.errors?.pattern ">Only alphabets are allowed<br></span>
+               <span class="error" *ngIf="myform.controls.srcaccid.touched && myform.controls.srcaccid.invalid && myform.controls.srcaccid.errors?.minlength">Minimum of three characters required<br></span>
+               <span class="error" *ngIf="myform.controls.srcaccid.touched && myform.controls.srcaccid.invalid && myform.controls.srcaccid.errors?.maxlength">atmost 15 characters are allowd</span>
+                    </div>
+                    <div>
+                    <label for="Name" class="col-form-label">Target Account:</label>
+                    <input type="text" formControlName="taraccid" class="form-control " name="uname" >
+                    <span class="error" *ngIf="myform.controls.taraccid.touched && myform.controls.taraccid.invalid && myform.controls.taraccid.errors?.required">taraccid is required<br></span>
+            <span class="error" *ngIf="myform.controls.taraccid.touched && myform.controls.taraccid.invalid && myform.controls.taraccid.errors?.pattern ">Only alphabets are allowed<br></span>
+           <span class="error" *ngIf="myform.controls.taraccid.touched && myform.controls.taraccid.invalid && myform.controls.taraccid.errors?.minlength">Minimum of three characters required<br></span>
+           <span class="error" *ngIf="myform.controls.taraccid.touched && myform.controls.taraccid.invalid && myform.controls.taraccid.errors?.maxlength">atmost 15 characters are allowd</span>
+                </div>
+                <div class="form-group ">
+                    <label for="pwd" >Amount:</label>
+                     <input type="number" formControlName="amount" class="form-control " name="pass"  >
+                     <span class="error" *ngIf="myform.controls.amount.touched && myform.controls.amount.invalid && myform.controls.amount.errors?.required">amount is required<br></span>
+             <span class="error" *ngIf="myform.controls.amount.touched && myform.controls.amount.invalid && myform.controls.amount.errors?.minlength">Minimum of six characters required</span>
+                </div>
+
+                    <br>
+                    <div class="form-group ">
+                        <input type="button" class="btn btn-info btn-lg" id="btn" value="Transfer" [disabled]="!myform.valid" (click)="transfer()">
+                        
+                    </div>
+            </div>
+                </form>
+    </div>
+    <div *ngIf="!flag" class="center">
+        <h1 class="text-danger">UnAuthorized Access</h1>
+    </div>
+</body>
+</html>

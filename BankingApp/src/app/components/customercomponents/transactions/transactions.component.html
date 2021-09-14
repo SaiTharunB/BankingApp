@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" *ngIf="flag">
+        <button class="btn btn-warning" id="btn" (click)="getAccounts()">Reload Accounts</button>
+        <div *ngIf="aflag">
+           
+            <table class="table table-bordered" id="table">
+                <thead>
+                  <tr >
+                    <th scope="col">Account Number</th>
+                    <th scope="col">Click the link </th>
+                   
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let acc of accountDetails">
+                    
+                    <td >{{acc.accountNumber}}</td>
+                    <td >  <button class="btn btn-success" routerLink="/transaction/{{acc.accountNumber}}">View Transactions</button></td>
+                   
+                   
+                    
+                  </tr>
+                </tbody>
+           </table>
+        </div>
+    </div>
+    <div *ngIf="!aflag&&flag">
+      <h2>No Accounts Found on your ID try reloading or create account</h2></div>
+      <div *ngIf="!flag" class="center">
+        <h1 class="text-danger">UnAuthorized Access</h1>
+    </div>
+</body>
+</html>

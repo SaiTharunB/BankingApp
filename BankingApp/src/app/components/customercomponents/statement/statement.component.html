@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" *ngIf="flag">
+       
+       <div class="design">
+          Account Number <input type="number" style="margin-right: 20px;" [(ngModel)]="accountNumber"/>Start Date <input type="date" style="margin-right: 20px;" [(ngModel)]="frmDate"/> End Date <input type="date" [(ngModel)]="toDate"/>
+          <br><button class="btn btn-warning btn-lg" id="btn"  (click)="getStatement()">GET</button>
+        </div>
+        <br>
+          <table class="table table-bordered" *ngIf="sflag" id="cc">
+            <thead>
+              <tr>
+                <th scope="col">Account No</th>
+                <th scope="col">Date</th>
+                <th scope="col">Narration</th>
+                <th scope="col">Reference Numbers</th>
+                <th scope="col">Withdraws</th>
+                <th scope="col">Deposit</th>
+                <th scope="col">Closing Balance</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let stmt of statement">
+                
+                <td > {{stmt.accountNo}}</td>
+                <td > {{stmt.date}}</td>
+                <td > {{stmt.narration}}</td>
+                <td >{{stmt.refNo}}</td>
+                <td >{{stmt.withdraws}}</td>
+                <td >  {{stmt.deposits}}</td>
+                <td >  {{stmt.closingBalance}}</td>
+               
+              </tr>
+            </tbody>
+       </table>
+           
+    </div>
+    <div *ngIf="!flag">
+      <h2>No Statements Found</h2>
+    </div>
+    {{err}}
+   
+</body>
+</html>

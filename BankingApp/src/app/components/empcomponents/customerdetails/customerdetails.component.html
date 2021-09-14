@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" *ngIf="flag">
+         
+             <form class="form-group"  [formGroup]="myform">
+              <div class="design" id="cc">
+                        <div class="form-group ">
+                            <label for="Name" class="col-form-label">Customer Id:</label>
+                            <input type="text" formControlName="cid" class="form-control " name="cid" >
+                            <span class="error" *ngIf="myform.controls.cid.touched && myform.controls.cid.invalid && myform.controls.cid.errors?.required">customer Id is required<br></span>
+                
+                        </div>
+                        <div class="form-group ">
+                            <input type="button" class="btn btn-info " id="btn" value="Get Details" [disabled]="!myform.valid" (click)="getDetails()">
+                            
+                        </div>
+                        </div>
+                        </form>
+                        <span class="text-danger" id="cred" *ngIf="disp">Sorry! No Customer Exists With that Id...</span>
+          <div *ngIf="dflag">
+            <table class="table table-bordered" id="table">
+                <thead>
+                  <tr>
+                    <th scope="col">User ID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Pan Number</th>
+                    <th scope="col">Date Of Birth</th>
+                    <th scope="col">Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                    <td >{{data.userId}}</td>
+                    <td > {{data.username}}</td>
+                    <td >{{data.email}}</td>
+                    <td >{{data.panNumber}}</td>
+                    <td >{{data.dateOfBirth}}</td>
+                    <td >{{data.address}}</td>
+                    
+                  </tr>
+                </tbody>
+           </table>
+           <table class="table table-bordered" id="table2">
+            <thead>
+              <tr>
+                <th scope="col">Account Number</th>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Account Type</th>
+                <th scope="col">Balance</th>
+                <th scope="col">Username</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let acc of data.accounts;  ">
+                
+                <td >{{acc.accountNumber}}</td>
+                <td > {{acc.customerId}}</td>
+                <td >{{acc.accountType}}</td>
+                <td >{{acc.balance}}</td>
+                <td >{{acc.username}}</td>
+               
+                
+              </tr>
+            </tbody>
+       </table>
+          
+          </div>
+              
+           
+    </div>
+    <div *ngIf="!flag" class="center">
+      <h1 class="text-danger">UnAuthorized Access</h1>
+  </div>
+</body>
+</html>

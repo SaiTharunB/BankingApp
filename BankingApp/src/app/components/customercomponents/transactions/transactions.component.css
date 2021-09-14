@@ -1,0 +1,15 @@
+#btn{
+    margin-top: 35px;
+    margin-left: 400px;
+    margin-bottom: 50px;
+}
+
+.center{
+    position:absolute;
+    height: X px;
+    width: Y px;
+    left:40%;
+    top:50%;
+    margin-top:- X/2 px;
+    margin-left:- Y/2 px;
+}

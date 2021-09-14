@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div  *ngIf="flag" class="container">
+       
+         <form class="form-group"  [formGroup]="myform">
+            <div class="design" id="cc">
+                    <div class="form-group ">
+                        <label for="Name" class="col-form-label">Account Id:</label>
+                        <input type="number" formControlName="accid" class="form-control " name="uname" >
+                        <span class="error" *ngIf="myform.controls.accid.touched && myform.controls.accid.invalid && myform.controls.accid.errors?.required">accid is required<br></span>
+                <span class="error" *ngIf="myform.controls.accid.touched && myform.controls.accid.invalid && myform.controls.accid.errors?.pattern ">Only alphabets are allowed<br></span>
+               <span class="error" *ngIf="myform.controls.accid.touched && myform.controls.accid.invalid && myform.controls.accid.errors?.minlength">Minimum of three characters required<br></span>
+               <span class="error" *ngIf="myform.controls.accid.touched && myform.controls.accid.invalid && myform.controls.accid.errors?.maxlength">atmost 15 characters are allowd</span>
+                    </div>
+                    <div class="form-group ">
+                        <label for="pwd" >Amount:</label>
+                         <input type="number" formControlName="amount" class="form-control " name="pass"  >
+                         <span class="error" *ngIf="myform.controls.amount.touched && myform.controls.amount.invalid && myform.controls.amount.errors?.required">amount is required<br></span>
+                 <span class="error" *ngIf="myform.controls.amount.touched && myform.controls.amount.invalid && myform.controls.amount.errors?.minlength">Minimum of six characters required</span>
+                    </div>
+
+                    <br>
+                    <div class="form-group ">
+                        <input type="button" class="btn btn-info btn-lg" id="btn" value="Deposit" [disabled]="!myform.valid" (click)="deposit()">
+                        
+                    </div>
+            </div>
+                </form>
+    </div>
+    <span class="text-success" id="msg" *ngIf="rflag">{{reply.messgae}}...</span><br><br>
+    <span class="text-success" id="msg2" *ngIf="rflag"> Current Balance is Rs. {{reply.balance}}</span>
+    <span class="text-danger" id="msg3" *ngIf="eflag">Deposit Failed check account number and try again...</span>
+    <div *ngIf="!flag" class="center">
+        <h1 class="text-danger">UnAuthorized Access</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+#btn{
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 380px;
+}
+#cc{
+    background-color: rgb(159, 190, 159);
+}
+.design{
+    margin-top: 50px;
+}
+
+.center{
+    position:absolute;
+    height: X px;
+    width: Y px;
+    left:40%;
+    top:50%;
+    margin-top:- X/2 px;
+    margin-left:- Y/2 px;
+}

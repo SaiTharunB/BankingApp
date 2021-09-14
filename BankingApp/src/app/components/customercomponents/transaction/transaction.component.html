@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="container" *ngIf="flag">
+    <button class="btn btn-warning" id="btn" (click)="getTransaction(b)">Reload</button>
+    <div *ngIf="tflag" class="table-responsive">
+        <table class="table table-bordered" id="table">
+            <thead>
+              <tr>
+                <th scope="col">Transaction ID</th>
+                <th scope="col">Source Account</th>
+                <th scope="col">Source Owner</th>
+                <th scope="col">Target Account</th>
+                <th scope="col">Target Owner</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Initiation Date</th>
+                <th scope="col">Reference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of transactionDetails">
+                
+                <td >{{i.id}}</td>
+                <td > {{i.sourceAccountNumber}}</td>
+                <td >{{i.sourceOwnerName}}</td>
+                <td >{{i.targetAccountNumber}}</td>
+                <td >{{i.targetOwnerName}}</td>
+                <td >{{i.amount}}</td>
+                <td >{{i.date}}</td>
+                <td > {{i.reference}}</td>
+              </tr>
+            </tbody>
+       </table>
+        
+
+    </div>
+    <div *ngIf="!tflag">
+      <h2>No Transaction Found Try Reloading or make any transaction</h2>
+    </div>
+    <div *ngIf="!flag" class="center">
+      <h1 class="text-danger">UnAuthorized Access</h1>
+  </div>
+</body>
+</html>

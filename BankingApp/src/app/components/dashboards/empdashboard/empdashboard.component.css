@@ -1,0 +1,19 @@
+.logout
+{
+    align-self:right;
+    margin-left:50%;
+}
+.customnav
+{
+    background-color: #563d7c;
+    height:100px;
+    border-bottom-right-radius: 2%;
+    border-bottom-left-radius: 2%;
+    padding:10px;
+    box-shadow: black;
+    margin-bottom: 10px;
+}
+a:hover{
+    
+    background-color: rgb(39, 25, 65);
+}

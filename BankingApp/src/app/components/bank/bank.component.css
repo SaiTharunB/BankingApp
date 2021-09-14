@@ -1,0 +1,106 @@
+.bg{
+    height: 1050px;
+}
+h1{
+    text-align: center;
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 500px;
+    box-shadow: 10px 10px 10px rgb(43, 206, 11);
+    text-shadow: springgreen;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;  
+    
+    text-emphasis-color: blue;
+}
+img{
+    padding-top: 10px;
+    width: 650px;
+  height: 450px;
+}
+.fix{
+    padding-top: 50px;
+    text-align: center;
+    padding-right: 100px ;
+    font-style:italic;
+    text-decoration-line: inherit;
+    text-decoration-line: underline;
+    color: rgb(255, 0, 0);
+    font-size: 40px;
+}
+.features{
+    
+    box-shadow: 10px 10px 10px red;
+    border-radius: 100px;
+    width: 650px;
+  height: 270px;
+    
+    padding-right: 100px ;
+    
+    font-family:sans-serif;
+    
+    color: rgb(9, 10, 43);
+    font-weight: bold;
+    
+    
+}
+ul {
+    list-style-image: url('https://img.icons8.com/ios-glyphs/30/fa314a/circled-play.png');
+    padding-right: 30px;
+    
+    margin-left: 35px;
+    
+  }
+  li{
+      font-size: 20px;
+      padding-left: 15px;
+  }
+  .icon{
+    margin-top: 30px;
+
+  }
+  
+ 
+ .features:hover {
+  outline: 0px solid transparent;
+  padding: 20px 20px;
+  
+  box-shadow: 10px 10px 10px rgb(0, 132, 255);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgb(21, 10, 61);
+ }
+ #picleft:hover{
+  outline: 0px solid transparent;
+  padding: 20px 20px;
+  border-radius: 200px;
+  box-shadow: 10px 10px 10px rgb(116, 236, 100);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; 
+ }
+ #picright:hover{
+  outline: 0px solid transparent;
+  padding: 20px 20px;
+  border-radius: 120px;
+  box-shadow: 2px 2px 10px 10px rgb(116, 236, 100);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; 
+ }
+ #offer:hover{
+  outline: 0px solid transparent;
+  
+  border: 5px solid #330142;
+  box-shadow: 10px 10px 10px rgb(238, 35, 187);
+  
+  text-decoration-line: underline;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+ }
+ #hom:hover{
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+
+ }
+ .fix:hover{
+   color: rgb(13, 14, 13);
+   font-family: inherit;
+ }

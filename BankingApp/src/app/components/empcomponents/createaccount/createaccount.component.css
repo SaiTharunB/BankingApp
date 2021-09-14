@@ -1,0 +1,40 @@
+.error
+{
+    color:red
+}
+.design{
+    margin-top: 50px;
+    border: 5px solid rgb(250, 250, 250);
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px 5px #403d68;
+    width: 650px;
+    height: 450px;
+    margin-left: 300px;
+}
+#btn{
+    text-align: center;
+    margin-left: 280px;
+}
+#cc:hover{
+    outline: 0px solid transparent;
+    
+
+  
+  padding: 20px 20px;
+  box-shadow: 10px 10px 10px rgb(255, 238, 4);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; 
+  border: 10px solid rebeccapurple;
+  border-radius: 1em;
+  border-top-right-radius: 10% 30%;
+}
+
+.center{
+    position:absolute;
+    height: X px;
+    width: Y px;
+    left:40%;
+    top:50%;
+    margin-top:- X/2 px;
+    margin-left:- Y/2 px;
+}
